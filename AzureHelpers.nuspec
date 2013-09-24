@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AzureHelpers</id>
+    <version>1.0.0</version>
+    <authors>Bam Interactive</authors>
+    <owners>Bam Interactive</owners>
+    <projectUrl>https://github.com/baminteractive/AzureHelpers.git</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Helper classes for interacting with Microsoft Windows Azure services</description>
+    <releaseNotes>This is the first private release of Stempeln.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>cloud azure</tags>
+    <dependencies>
+      <dependency id="Microsoft.Data.Edm" version="5.0.2" />
+      <dependency id="Microsoft.Data.OData" version="5.0.2" />
+      <dependency id="Microsoft.WindowsAzure.ConfigurationManager" version="1.8.0.0" />
+      <dependency id="System.Spatial" version="5.0.2" />
+      <dependency id="WindowsAzure.Storage" version="2.0.4.0" />
+    </dependencies>
+  </metadata>
+</package>
