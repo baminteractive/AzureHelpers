@@ -1,6 +1,6 @@
 #Azure.Helpers
 
-![alt text][logo]
+<a href="http://teamcity.bamads.com:8111/viewType.html?buildTypeId=AzureHelpers_BuildAndPublishToNuget&guest=1"><img src="http://teamcity.bamads.com:8111/app/rest/builds/buildType:(id:AzureHelpers_BuildAndPublishToNuget)/statusIcon"/></a>
 
 Azure.Helpers is a set of utility classes that make working with Azure Storage easier.  There are currently classes for Blob and Table storage.
 
@@ -130,5 +130,3 @@ Get a table reference from the container
 ###TableUtility.TableClient
 
 Read-only property for accessing the Table Client. Uses the connection string passed in from the constructor
-
-[logo]: http://teamcity.bamads.com:8111/app/rest/builds/buildType:(id:AzureHelpers_BuildAndPublishToNuget)/statusIcon
