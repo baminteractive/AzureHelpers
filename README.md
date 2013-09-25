@@ -1,6 +1,10 @@
 #Azure.Helpers
 
-![alt text][logo]
+[sourcecode language="html"]
+<pre><a href="http://teamcity.bamads.com:8111/viewType.html?buildTypeId=AzureHelpers_BuildAndPublishToNuget&guest=1">
+<img src="http://teamcity.bamads.com:8111/app/rest/builds/buildType:(id:AzureHelpers_BuildAndPublishToNuget)/statusIcon"/>
+</a>
+[/sourcecode]
 
 
 
@@ -132,6 +136,3 @@ Get a table reference from the container
 ###TableUtility.TableClient
 
 Read-only property for accessing the Table Client. Uses the connection string passed in from the constructor
-
-
-[logo]: http://teamcity.bamads.com:8111/app/rest/builds/buildType:(id:AzureHelpers_BuildAndPublishToNuget)/statusIcon&guest=1 "Build Status"
