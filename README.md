@@ -1,5 +1,9 @@
 #Azure.Helpers
 
+![alt text](http://teamcity.bamads.com:8111/app/rest/builds/buildType:(id:AzureHelpers_BuildAndPublishToNuget)/statusIcon)
+
+
+
 Azure.Helpers is a set of utility classes that make working with Azure Storage easier.  There are currently classes for Blob and Table storage.
 
 ##BlobUtility
