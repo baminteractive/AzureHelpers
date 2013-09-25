@@ -134,4 +134,4 @@ Get a table reference from the container
 Read-only property for accessing the Table Client. Uses the connection string passed in from the constructor
 
 
-[logo]: http://teamcity.bamads.com:8111/app/rest/builds/buildType:(id:AzureHelpers_BuildAndPublishToNuget)/statusIcon "Build Status"
+[logo]: http://teamcity.bamads.com:8111/app/rest/builds/buildType:(id:AzureHelpers_BuildAndPublishToNuget)/statusIcon&guest=1 "Build Status"
