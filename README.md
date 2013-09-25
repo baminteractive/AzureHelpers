@@ -1,5 +1,7 @@
 #Azure.Helpers
 
+Azure.Helpers is a set of utility classes that make working with Azure Storage easier.  There are currently classes for Blob and Table storage.
+
 ##BlobUtility
 ###BlobUtility.#ctor(System.String,System.String)
 
@@ -7,9 +9,9 @@ Constructor takes a connection string as a string and a container name
 
 ####Params
 
-**connectionString**: 
+> **connectionString**: 
 
-**containerName**: 
+> **containerName**: 
 
 ###BlobUtility.ContainerName
 
@@ -21,13 +23,13 @@ Put (create or update) a blob from a memory stream.
 
 ####Params
 
-**stream**: Memory stream to put to a blob
+> **stream**: Memory stream to put to a blob
 
-**blobPath**: Path to the blob
+> **blobPath**: Path to the blob
 
-**contentType**: Content type of the blob
+> **contentType**: Content type of the blob
 
-**permissions**: Blob Container Permissions for the blob
+> **permissions**: Blob Container Permissions for the blob
 
 ###BlobUtility.PutBlob(System.String,System.String,System.String,Microsoft.WindowsAzure.Storage.Blob.BlobContainerPermissions)
 
@@ -35,13 +37,13 @@ Put (create or update) a blob from a string.
 
 ####Params
 
-**content**: Content to put to the blob
+> **content**: Content to put to the blob
 
-**blobPath**: Path to the blob
+> **blobPath**: Path to the blob
 
-**contentType**: Content type of the blob
+> **contentType**: Content type of the blob
 
-**permissions**: Blob Container Permissions for the blob
+> **permissions**: Blob Container Permissions for the blob
 
 ###BlobUtility.GetBlob(System.String)
 
@@ -49,7 +51,7 @@ Retrieve the specified blob
 
 ####Params
 
-**blobAddress**: Address of blob to retrieve
+> **blobAddress**: Address of blob to retrieve
 
 ###BlobUtility.CopyBlob(System.String,System.String)
 
@@ -57,9 +59,9 @@ Copy a blob.
 
 ####Params
 
-**sourceBlobName**: Source blob
+> **sourceBlobName**: Source blob
 
-**destBlobName**: Destination blob
+> **destBlobName**: Destination blob
 
 ###BlobUtility.DeleteBlob(System.String)
 
@@ -67,7 +69,7 @@ Delete a blob.
 
 ####Params
 
-**blobName**: Name of blob to delete from container
+> **blobName**: Name of blob to delete from container
 
 ###BlobUtility.Exists(System.String)
 
@@ -75,7 +77,7 @@ Checks if a blob exists in the current container
 
 ####Params
 
-**blobPath**: Path to the blob
+> **blobPath**: Path to the blob
 
 ###BlobUtility.RenameBlob(System.String,System.String)
 
@@ -83,9 +85,9 @@ Renames a blob
 
 ####Params
 
-**origBlobName**: Original blob name
+> **origBlobName**: Original blob name
 
-**newBlobName**: New blob name
+> **newBlobName**: New blob name
 
 ###BlobUtility.BlobContainer
 
@@ -113,7 +115,7 @@ Constructor takes a connection string to an Azure Storage Account
 
 ####Params
 
-**connectionString**: Connection string for an Azure Storage Account
+> **connectionString**: Connection string for an Azure Storage Account
 
 ###TableUtility.GetTable(System.String)
 
@@ -121,7 +123,7 @@ Get a table reference from the container
 
 ####Params
 
-**tableName**: Name of table to fetch
+> **tableName**: Name of table to fetch
 
 ###TableUtility.TableClient
 

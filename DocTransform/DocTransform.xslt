@@ -35,7 +35,7 @@
                     <xsl:text>&#xa;</xsl:text>
                     <xsl:text>&#xa;</xsl:text>
                     <xsl:for-each select="param">
-                      <xsl:text>> **</xsl:text>
+                      <xsl:text disable-output-escaping="yes">> **</xsl:text>
                       <xsl:value-of select="@name"/>
                       <xsl:text>**</xsl:text>
                       <xsl:text>: </xsl:text>
