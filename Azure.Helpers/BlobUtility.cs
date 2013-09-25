@@ -6,21 +6,35 @@ using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace Azure.Helpers
 {
+    /// <summary>
+    /// Utility class for interacting with blobs including getting content, putting, copying, and deleting
+    /// </summary>
     public class BlobUtility : StorageBase
     {
+        /// <summary>
+        /// Constructor takes a connection string as a string and a container name
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <param name="containerName"></param>
         public BlobUtility(string connectionString, string containerName)
         {
             ConnectionString = connectionString;
             ContainerName = containerName;
         }
 
+        /// <summary>
+        /// Tracks the container name
+        /// </summary>
         public string ContainerName = string.Empty;
 
+        /// <summary>
+        /// Read-only property for retrieving the blob container
+        /// </summary>
         public CloudBlobContainer BlobContainer
         {
             get
             {
-                CloudBlobContainer container = BlobClient.GetContainerReference(ContainerName);
+                var container = BlobClient.GetContainerReference(ContainerName);
                 container.CreateIfNotExists();
                 return container;
             }
@@ -36,12 +50,19 @@ namespace Azure.Helpers
         }
 
         #region Instance Methods
-
+        /// <summary>
+        /// Put (create or update) a blob from a memory stream.
+        /// </summary>
+        /// <param name="stream">Memory stream to put to a blob</param>
+        /// <param name="blobPath">Path to the blob</param>
+        /// <param name="contentType">Content type of the blob</param>
+        /// <param name="permissions">Blob Container Permissions for the blob</param>
+        /// <returns></returns>
         public string PutBlob(MemoryStream stream, string blobPath, string contentType, BlobContainerPermissions permissions)
         {
             try
             {
-                CloudBlockBlob blob = BlobContainer.GetBlockBlobReference(blobPath);
+                var blob = BlobContainer.GetBlockBlobReference(blobPath);
 
                 // Set proper content type on the blog
                 blob.Properties.ContentType = contentType;
@@ -68,16 +89,21 @@ namespace Azure.Helpers
 
         }
 
-        // Put (create or update) a blob.
-        // Return true on success, false if unable to create, throw exception on error.
-
+        /// <summary>
+        /// Put (create or update) a blob from a string.
+        /// </summary>
+        /// <param name="content">Content to put to the blob</param>
+        /// <param name="blobPath">Path to the blob</param>
+        /// <param name="contentType">Content type of the blob</param>
+        /// <param name="permissions">Blob Container Permissions for the blob</param>
+        /// <returns>True on success, false if unable to create</returns>
         public string PutBlob(string content, string blobPath, string contentType, BlobContainerPermissions permissions)
         {
             try
             {
-                CloudBlockBlob blob = BlobContainer.GetBlockBlobReference(blobPath);
+                var blob = BlobContainer.GetBlockBlobReference(blobPath);
 
-                byte[] bytes = Encoding.Unicode.GetBytes(content);
+                var bytes = Encoding.Unicode.GetBytes(content);
 
                 var ms = new MemoryStream(bytes);
 
@@ -111,15 +137,18 @@ namespace Azure.Helpers
             return stream;
         }
 
-        // Copy a blob.
-        // Return true on success, false if unable to create, throw exception on error.
-
+        /// <summary>
+        /// Copy a blob.
+        /// </summary>
+        /// <param name="sourceBlobName">Source blob</param>
+        /// <param name="destBlobName">Destination blob</param>
+        /// <returns>True on success, false if unable to create</returns>
         public bool CopyBlob(string sourceBlobName, string destBlobName)
         {
             try
             {
-                CloudBlockBlob sourceBlob = BlobContainer.GetBlockBlobReference(sourceBlobName);
-                CloudBlockBlob destBlob = BlobContainer.GetBlockBlobReference(destBlobName);
+                var sourceBlob = BlobContainer.GetBlockBlobReference(sourceBlobName);
+                var destBlob = BlobContainer.GetBlockBlobReference(destBlobName);
                 destBlob.StartCopyFromBlob(sourceBlob); // async
                 return true;
             }
@@ -134,14 +163,16 @@ namespace Azure.Helpers
             }
         }
 
-        // Delete a blob.
-        // Return true on success, false if unable to create, throw exception on error.
-
+        /// <summary>
+        /// Delete a blob.
+        /// </summary>
+        /// <param name="blobName">Name of blob to delete from container</param>
+        /// <returns>True on success, false if unable to create</returns>
         public bool DeleteBlob(string blobName)
         {
             try
             {
-                CloudBlockBlob blob = BlobContainer.GetBlockBlobReference(blobName);
+                var blob = BlobContainer.GetBlockBlobReference(blobName);
                 blob.Delete();
                 return true;
             }
@@ -156,9 +187,14 @@ namespace Azure.Helpers
             }
         }
 
+        /// <summary>
+        /// Checks if a blob exists in the current container
+        /// </summary>
+        /// <param name="blobPath">Path to the blob</param>
+        /// <returns>True on success, false if unable to create</returns>
         public bool Exists(string blobPath)
         {
-            CloudBlockBlob blob = BlobContainer.GetBlockBlobReference(blobPath);
+            var blob = BlobContainer.GetBlockBlobReference(blobPath);
 
             try
             {
@@ -175,6 +211,12 @@ namespace Azure.Helpers
             return false;
         }
 
+        /// <summary>
+        /// Renames a blob
+        /// </summary>
+        /// <param name="origBlobName">Original blob name</param>
+        /// <param name="newBlobName">New blob name</param>
+        /// <returns>True on success, false if unable to create</returns>
         public bool RenameBlob(string origBlobName, string newBlobName)
         {
             try
