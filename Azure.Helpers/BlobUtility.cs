@@ -14,8 +14,8 @@ namespace Azure.Helpers
         /// <summary>
         /// Constructor takes a connection string as a string and a container name
         /// </summary>
-        /// <param name="connectionString"></param>
-        /// <param name="containerName"></param>
+        /// <param name="connectionString">The connection string for the Azure Storage Account</param>
+        /// <param name="containerName">The Blob Container</param>
         public BlobUtility(string connectionString, string containerName)
         {
             ConnectionString = connectionString;

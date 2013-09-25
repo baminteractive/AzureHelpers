@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="DocTransform.xslt"?>
+<doc>
+    <assembly>
+        <name>Azure.Helpers</name>
+    </assembly>
+    <members>
+        <member name="T:Azure.Helpers.BlobUtility">
+            <summary>
+            Utility class for interacting with blobs including getting content, putting, copying, and deleting
+            </summary>
+        </member>
+        <member name="T:Azure.Helpers.StorageBase">
+            <summary>
+            Base class for interacting with Azure Cloud Storage
+            </summary>
+        </member>
+        <member name="P:Azure.Helpers.StorageBase.ConnectionString">
+            <summary>
+            Tracks the connection string for the Cloud Storage Account
+            </summary>
+        </member>
+        <member name="P:Azure.Helpers.StorageBase.Account">
+            <summary>
+            Property for setting the Cloud Storage Account
+            </summary>
+        </member>
+        <member name="M:Azure.Helpers.BlobUtility.#ctor(System.String,System.String)">
+            <summary>
+            Constructor takes a connection string as a string and a container name
+            </summary>
+            <param name="connectionString"></param>
+            <param name="containerName"></param>
+        </member>
+        <member name="F:Azure.Helpers.BlobUtility.ContainerName">
+            <summary>
+            Tracks the container name
+            </summary>
+        </member>
+        <member name="M:Azure.Helpers.BlobUtility.PutBlob(System.IO.MemoryStream,System.String,System.String,Microsoft.WindowsAzure.Storage.Blob.BlobContainerPermissions)">
+            <summary>
+            Put (create or update) a blob from a memory stream.
+            </summary>
+            <param name="stream">Memory stream to put to a blob</param>
+            <param name="blobPath">Path to the blob</param>
+            <param name="contentType">Content type of the blob</param>
+            <param name="permissions">Blob Container Permissions for the blob</param>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.Helpers.BlobUtility.PutBlob(System.String,System.String,System.String,Microsoft.WindowsAzure.Storage.Blob.BlobContainerPermissions)">
+            <summary>
+            Put (create or update) a blob from a string.
+            </summary>
+            <param name="content">Content to put to the blob</param>
+            <param name="blobPath">Path to the blob</param>
+            <param name="contentType">Content type of the blob</param>
+            <param name="permissions">Blob Container Permissions for the blob</param>
+            <returns>True on success, false if unable to create</returns>
+        </member>
+        <member name="M:Azure.Helpers.BlobUtility.GetBlob(System.String)">
+            <summary>
+            Retrieve the specified blob
+            </summary>
+            <param name="blobAddress">Address of blob to retrieve</param>
+            <returns>Stream containing blob</returns>
+        </member>
+        <member name="M:Azure.Helpers.BlobUtility.CopyBlob(System.String,System.String)">
+            <summary>
+            Copy a blob.
+            </summary>
+            <param name="sourceBlobName">Source blob</param>
+            <param name="destBlobName">Destination blob</param>
+            <returns>True on success, false if unable to create</returns>
+        </member>
+        <member name="M:Azure.Helpers.BlobUtility.DeleteBlob(System.String)">
+            <summary>
+            Delete a blob.
+            </summary>
+            <param name="blobName">Name of blob to delete from container</param>
+            <returns>True on success, false if unable to create</returns>
+        </member>
+        <member name="M:Azure.Helpers.BlobUtility.Exists(System.String)">
+            <summary>
+            Checks if a blob exists in the current container
+            </summary>
+            <param name="blobPath">Path to the blob</param>
+            <returns>True on success, false if unable to create</returns>
+        </member>
+        <member name="M:Azure.Helpers.BlobUtility.RenameBlob(System.String,System.String)">
+            <summary>
+            Renames a blob
+            </summary>
+            <param name="origBlobName">Original blob name</param>
+            <param name="newBlobName">New blob name</param>
+            <returns>True on success, false if unable to create</returns>
+        </member>
+        <member name="P:Azure.Helpers.BlobUtility.BlobContainer">
+            <summary>
+            Read-only property for retrieving the blob container
+            </summary>
+        </member>
+        <member name="T:Azure.Helpers.TableUtility">
+            <summary>
+            Utility class for interacting with Table Storage.
+            </summary>
+        </member>
+        <member name="F:Azure.Helpers.TableUtility.ContainerName">
+            <summary>
+            Tracks the current container name for the Blob Client
+            </summary>
+        </member>
+        <member name="M:Azure.Helpers.TableUtility.#ctor(System.String)">
+            <summary>
+            Constructor takes a connection string to an Azure Storage Account
+            </summary>
+            <param name="connectionString">Connection string for an Azure Storage Account</param>
+        </member>
+        <member name="M:Azure.Helpers.TableUtility.GetTable(System.String)">
+            <summary>
+            Get a table reference from the container
+            </summary>
+            <param name="tableName">Name of table to fetch</param>
+            <returns>CloudTable instance for the tableName</returns>
+        </member>
+        <member name="P:Azure.Helpers.TableUtility.TableClient">
+            <summary>
+            Read-only property for accessing the Table Client.  Uses the connection string passed in from the constructor
+            </summary>
+        </member>
+    </members>
+</doc>
