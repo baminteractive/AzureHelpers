@@ -9,7 +9,18 @@
       <xsl:text>#</xsl:text><xsl:value-of select="$assemblyName" disable-output-escaping="yes"/>
       <xsl:text>&#xa;</xsl:text>
       <xsl:text>&#xa;</xsl:text>
+      <xsl:text disable-output-escaping="yes"><![CDATA[<a href="http://teamcity.bamads.com:8111/viewType.html?buildTypeId=AzureHelpers_BuildAndPublishToNuget&guest=1" ><img src="http://teamcity.bamads.com:8111/app/rest/builds/buildType:(id:AzureHelpers_BuildAndPublishToNuget)/statusIcon" /></a>]]></xsl:text>
+      <xsl:text>&#xa;</xsl:text>
+      <xsl:text>&#xa;</xsl:text>
       <xsl:text>Azure.Helpers is a set of utility classes that make working with Azure Storage easier.  There are currently classes for Blob and Table storage.</xsl:text>
+      <xsl:text>&#xa;</xsl:text>
+      <xsl:text>&#xa;</xsl:text>
+      <xsl:text>##Installation</xsl:text>
+      <xsl:text>&#xa;</xsl:text>
+      <xsl:text>&#xa;</xsl:text>
+      <xsl:text>Install using the NuGet Package Manager</xsl:text>
+      <xsl:text>&#xa;</xsl:text>
+      <xsl:text>`Install-Package Azure.Helpers`</xsl:text>
       <xsl:text>&#xa;</xsl:text>
       <xsl:text>&#xa;</xsl:text>
 
