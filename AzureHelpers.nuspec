@@ -8,7 +8,7 @@
     <projectUrl>https://github.com/baminteractive/AzureHelpers.git</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Helper classes for interacting with Microsoft Windows Azure services</description>
-    <releaseNotes>This is the first private release of Stempeln.</releaseNotes>
+    <releaseNotes>This is the initial release.</releaseNotes>
     <copyright>Copyright 2013</copyright>
     <tags>cloud azure</tags>
     <dependencies>
