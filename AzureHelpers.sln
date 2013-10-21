@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.20827.3
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{289EFF69-4BC2-4EA4-BE9D-EDA625EBCC52}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,6 +13,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.Helpers", "Azure.Helpers\Azure.Helpers.csproj", "{75D75D4B-D0A4-4680-B538-CB672FFA49BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocTransform", "DocTransform\DocTransform.csproj", "{8FB3EFA5-0778-43B9-AEFA-C3D508FBB6EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6A83C6DA-2ECA-4AF5-BD92-AF13A60F7B50}"
+	ProjectSection(SolutionItems) = preProject
+		AzureHelpers.nuspec = AzureHelpers.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
