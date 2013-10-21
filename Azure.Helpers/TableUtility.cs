@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Storage.Table;
 using Microsoft.WindowsAzure.Storage.RetryPolicies;
 using CloudStorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount;
@@ -15,6 +17,11 @@ namespace Azure.Helpers
     /// Tracks the current container name for the Blob Client
     /// </summary>
     public string ContainerName = string.Empty;
+
+    /// <summary>
+    /// Default constructor.  Uses 'CloudStorageConnectionString' from ConfigurationManager.AppSettings to initialize connection.
+    /// </summary>
+    public TableUtility() : this(ConfigurationManager.AppSettings["CloudStorageConnectionString"]) { }
 
     /// <summary>
     /// Constructor takes a connection string to an Azure Storage Account
