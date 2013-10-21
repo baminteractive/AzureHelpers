@@ -80,7 +80,7 @@ namespace Azure.Helpers
     /// <param name="contentType">Content type of the blob</param>
     /// <param name="permissions">Blob Container Permissions for the blob</param>
     /// <returns></returns>
-    public string PutBlob(MemoryStream stream, string blobPath, string contentType, BlobContainerPermissions permissions)
+    public string PutBlob(MemoryStream stream, string blobPath, string contentType, Microsoft.WindowsAzure.StorageClient.BlobContainerPermissions permissions)
     {
       try
       {
@@ -119,7 +119,7 @@ namespace Azure.Helpers
     /// <param name="contentType">Content type of the blob</param>
     /// <param name="permissions">Blob Container Permissions for the blob</param>
     /// <returns>True on success, false if unable to create</returns>
-    public string PutBlob(string content, string blobPath, string contentType, BlobContainerPermissions permissions)
+    public string PutBlob(string content, string blobPath, string contentType, Microsoft.WindowsAzure.StorageClient.BlobContainerPermissions permissions)
     {
       try
       {
