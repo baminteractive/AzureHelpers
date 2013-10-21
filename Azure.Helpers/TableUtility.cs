@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Storage.Table;
 using Microsoft.WindowsAzure.Storage.RetryPolicies;
 using CloudStorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount;

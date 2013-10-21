@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>AzureHelpers</id>
     <version>1.0.0</version>
@@ -8,7 +8,7 @@
     <projectUrl>https://github.com/baminteractive/AzureHelpers.git</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Helper classes for interacting with Microsoft Windows Azure services</description>
-    <releaseNotes>This is the initial release.</releaseNotes>
+    <releaseNotes>asdf</releaseNotes>
     <copyright>Copyright 2013</copyright>
     <tags>cloud azure</tags>
     <dependencies>
