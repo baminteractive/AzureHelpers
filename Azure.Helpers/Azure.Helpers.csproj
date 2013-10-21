@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlobUtility.cs" />
+    <Compile Include="IBlobUtility.cs" />
     <Compile Include="ITableUtility.cs" />
     <Compile Include="StorageBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
